@@ -41,8 +41,8 @@ async def carbon_func(_, message):
     await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
     await message.reply_photo(
         photo=carbon,
-        caption="**Made by @MatRixBotzTG**",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝚄𝚂", url="https://t.me/MatRixBotzTG")]]),                   
+        caption="**BY : @M2LINKS**",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url="https://t.me/M2linksCommunity")]]),                   
     )
     await m.delete()
     carbon.close()
