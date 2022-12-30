@@ -26,7 +26,7 @@ BOT_TOKEN = "5871118086:AAEaWqv0yDR2vLXEcxkTuN8nZipYsznD93M"
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PICS = (environ.get('PICS' ,'https://telegra.ph/file/19eeb26fa2ce58765917a.jpg')).split()
+PICS = (environ.get('PICS' ,'https://te.legra.ph/file/7b87785a8b6686370f6bf.jpg https://te.legra.ph/file/a1879771e29a7f63320e8.jpg')).split()
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
@@ -37,7 +37,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = -1001555811375
-AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
+AUTH_GROUPS = -1001833989877
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://9860tushar:9860tushar@cluster0.y0smsth.mongodb.net/?retryWrites=true&w=majority")
@@ -46,9 +46,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'TG_files')
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
-START_MESSAGE = environ.get('START_MESSAGE', '👋 𝙷𝙴𝙻𝙾 {user}\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 {bot},\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽...')
-BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "⚠️ 𝙃𝙚𝙮 {query}! 𝙏𝙝𝙖𝙩'𝙨 𝙉𝙤𝙩 𝙁𝙤𝙧 𝙔𝙤𝙪. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙔𝙤𝙪𝙧 𝙊𝙬𝙣")
-FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', '𝑱𝒐𝒊𝒏 𝑶𝒖𝒓 𝑼𝒑𝒅𝒂𝒕𝒆𝒔 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑻𝒐 𝑼𝒔𝒆 𝑻𝒉𝒊𝒔 𝑩𝒐𝒕!')
+START_MESSAGE = environ.get('START_MESSAGE', '<b>Hello {} 👋🏻\n\nMy Name is {bot}, I Can Provide Movies & Series Just Add Me To Your Group And Enjoy 😍</b>')
+BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "⚠️ Hey {query}! That's Not For You. Please Request Your Own.")
+FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', '<b> JOIN OUR UPDATES CHANNEL @M2LINKS TO USE THIS BOT</b>')
 RemoveBG_API = environ.get("RemoveBG_API", "")
 WELCOM_PIC = environ.get("WELCOM_PIC", "https://telegra.ph/file/19eeb26fa2ce58765917a.jpg")
 WELCOM_TEXT = environ.get("WELCOM_TEXT", "Hey {user}\nwelcome to {chat}")
@@ -64,17 +64,17 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'M2linksCommunity')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [GreyMatter's Bot](https://t.me/M2links)")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [GreyMatter's Bot](https://t.me/M2links)")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <ahref={url}/releaseinfo>{year}</a>\n🌟Rating: <a href={url}/ratings>{rating}</a>\n☀️ Languages :<code>{languages}</code>\n👨‍💼 Dɪʀᴇᴄᴛᴏʀ: {director}\n👨🏻‍🦱 Pʀᴏᴅᴜᴄᴇʀ: {producer}\n📑 wʀɪᴛᴇʀ: {writer}\n📀 RunTime: {runtime} Minutes\n📆 Release Info : {release_date}\n📓 Sᴛᴏʀy : <code>{plot}</code>\n\n\n🍀Requested by🍀 : {message.from_user.mention}")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query:</b> {query}\n‌\n🏷 Title: <a href={url}>{title}</a>\n🎭 <b>Genres:</b> {genres}\n📆 <b>Year:</b> <ahref={url}/releaseinfo>{year}</a>\n🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a>\n☀️ <b>Languages :</b><code>{languages}</code>\n👨‍💼 <b>Dɪʀᴇᴄᴛᴏʀ:</b> {director}\n👨🏻‍🦱 <b>Pʀᴏᴅᴜᴄᴇʀ:</b> {producer}\n📑 <b>wʀɪᴛᴇʀ:</b> {writer}\n📀 <b>RunTime:</b> {runtime} Minutes\n📆 <b>Release Info :</b> {release_date}\n\n🍀Requested by🍀 : {message.from_user.mention}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
-MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
+MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), True)
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), False)
 
 #log srt
 LOG_STR = "Current Cusomized Configurations are:-\n"
