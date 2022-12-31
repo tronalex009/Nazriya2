@@ -26,11 +26,11 @@ BOT_TOKEN = "5871118086:AAFojpBZ6r1v26bgM3msBMMrPrWwTSlbVJM"
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PICS = (environ.get('PICS' ,'https://telegra.ph/file/19eeb26fa2ce58765917a.jpg')).split()
+PICS = (environ.get('PICS' ,'https://te.legra.ph/file/7b87785a8b6686370f6bf.jpg https://te.legra.ph/file/a1879771e29a7f63320e8.jpg')).split()
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1315317652').split()]
+ADMINS = [1315317652]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001555811375').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
@@ -46,7 +46,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'TG_files')
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
-START_MESSAGE = environ.get('START_MESSAGE', ',<b>Hello {user} 👋🏻\n\n My Name is {bot},I Can Provide Movies & Series Just Add Me To Your Group And Enjoy 😍</b>')
+START_MESSAGE = environ.get('START_MESSAGE', '<b>Hello {user} 👋🏻\nMy Name is {bot},I Can Provide Movies & Series Just Add Me To Your Group And Enjoy 😍</b>')
 BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "⚠️ Hey {query}! That's Not For You !! Request Own.")
 FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', 'JOIN UPDATES CHANNEL TO USE THIS BOT')
 RemoveBG_API = environ.get("RemoveBG_API", "")
