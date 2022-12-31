@@ -21,7 +21,7 @@ PORT = environ.get("PORT", "8083")
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = 4165961
 API_HASH = "38ba6396e513b86e9ed7ea534023a9cc"
-BOT_TOKEN = "5871118086:AAFojpBZ6r1v26bgM3msBMMrPrWwTSlbVJM"
+BOT_TOKEN = "5456930478:AAFj1MPgZWFSF2yWE2r9Rv0e0kXrLpVrgMs"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -31,7 +31,7 @@ BOT_START_TIME = time()
 
 # Admins, Channels & Users
 ADMINS = [1315317652]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001555811375').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001282513652 -1001611693204 -1001638006524 -1001612398277 -1001855514451').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
@@ -40,9 +40,9 @@ AUTH_CHANNEL = -1001555811375
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://9860tushar:9860tushar@cluster0.y0smsth.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://imdb4gb1:imdb4gb1@cluster0.ovlqoai.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'TG_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
@@ -59,20 +59,20 @@ BUTTON_LOCK = bool(environ.get("BUTTON_LOCK", True))
 # Others
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001555811375))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001701907795))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'M2LINKSCOMMUNITY')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [M2LINKS](https://t.me/M2LINKS)")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [M2LINKS](https://t.me/m2links)")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query:</b> {query}\n‌\n🏷 Title: <a href={url}>{title}</a>\n🎭 <b>Genres:</b> {genres}\n📆 <b>Year:</b> <ahref={url}/releaseinfo>{year}</a>\n🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a>\n📀 <b>RunTime:</b> {runtime} Minutes\n📆 <b>Release Info :</b> {release_date}\n\n<b>❤️‍🔥 Requested by :</b> {message.from_user.mention}")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query:</b> {query}\n‌\n🏷 Title: <a href={url}>{title}</a>\n🎭 <b>Genres:</b> {genres}\n📆 <b>Year:</b> <ahref={url}/releaseinfo>{year}</a>\n🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a>\n📀 <b>RunTime:</b> {runtime} Minutes\n📆 <b>Release Info :</b> {release_date}\n\n<b>❤️‍🔥 Requested by :</b> {message.from_user.mention}\n\n<b>⚠️ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴᴜᴛᴇꜱ</b>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
-MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
+MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), True)
 
