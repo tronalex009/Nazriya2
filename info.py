@@ -21,7 +21,7 @@ PORT = environ.get("PORT", "8083")
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = 4165961
 API_HASH = "38ba6396e513b86e9ed7ea534023a9cc"
-BOT_TOKEN = "5456930478:AAFj1MPgZWFSF2yWE2r9Rv0e0kXrLpVrgMs"
+BOT_TOKEN = "5456930478:AAF1KYE8Ql5O4K1HSBLwPHuCC9LCImumeE8"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -36,7 +36,7 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = -1001555811375
+AUTH_CHANNEL = -1001324138225
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
