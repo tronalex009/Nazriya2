@@ -30,7 +30,7 @@ PICS = (environ.get('PICS' ,'https://te.legra.ph/file/7b87785a8b6686370f6bf.jpg 
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-ADMINS = [1315317652]
+ADMINS = [1132901778]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001282513652 -1001611693204 -1001638006524 -1001612398277 -1001855514451').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
