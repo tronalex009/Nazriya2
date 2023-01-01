@@ -1032,7 +1032,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
-    elif query.data == "stats":
+    elif query.data == "mstats":
         buttons = [[
             InlineKeyboardButton('◀️ ʙᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('⟲ Rᴇғʀᴇsʜ', callback_data='rfrsh')
@@ -1211,7 +1211,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "stats":
+    elif query.data == "mstats":
         buttons = [[
             InlineKeyboardButton('◀️ ʙᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('♻️ ʀᴇꜰʀᴇꜱʜ', callback_data='rfrsh')
@@ -1575,7 +1575,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"<b>Results For :</b> {search}"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -1678,7 +1678,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"<b>Results For :</b> {search}"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -1711,7 +1711,7 @@ async def pm_spoll_choker(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("<b>I couldn't find any movie in that name.</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -1740,15 +1740,16 @@ async def pm_spoll_choker(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("<b>I couldn't find anything related to that. Check your spelling,</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
     PM_SPELL_CHECK[msg.id] = movielist
     btn = [[InlineKeyboardButton(text=movie.strip(), callback_data=f"pmspolling#{user}#{k}")] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'pmspolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?", reply_markup=InlineKeyboardMarkup(btn), reply_to_message_id=msg.id)
-
+    k = await msg.reply("<b>Please Enter / Select Correct Spelling</b>", reply_markup=InlineKeyboardMarkup(btn), reply_to_message_id=msg.id)
+    await asyncio.sleep(60)
+    await k.delete()
 
 async def advantage_spell_chok(msg):
     query = re.sub(
@@ -1759,7 +1760,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("<b>I couldn't find any movie in that name.</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -1788,7 +1789,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("<b>I couldn't find anything related to that. Check your spelling</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -1800,9 +1801,10 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
-                    reply_markup=InlineKeyboardMarkup(btn))
-
+    k = await msg.reply("<b>Please Enter / Select Correct Spelling</b>", reply_markup=InlineKeyboardMarkup(btn))
+    await asyncio.sleep(60)
+    await k.delete()
+    
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
