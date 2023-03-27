@@ -21,7 +21,7 @@ PORT = environ.get("PORT", "8082")
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = 4165961
 API_HASH = "38ba6396e513b86e9ed7ea534023a9cc"
-BOT_TOKEN = "5456930478:AAHiWlgBfDdkd5mCvQ7Dbq0UdWGej3rf4ZU"
+BOT_TOKEN = "6214618945:AAHHDeyQzCfrhBKsCg7DUPwmUE3zdhTwYT0"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -31,17 +31,17 @@ BOT_START_TIME = time()
 
 # Admins, Channels & Users
 ADMINS = [1132901778]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001282513652 -1001611693204 -1001638006524 -1001612398277 -1001855514451').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001963801216).split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = -1001324138225
+AUTH_CHANNEL = -1001963801216
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://imdb4gb1:imdb4gb1@cluster0.ovlqoai.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster1")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #maximum search result buttos count in number#
@@ -64,9 +64,9 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'M2LINKSCOMMUNITY')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b>Fɪʟᴇ Nᴀᴍᴇ 📁 : </b><code>{file_name}</code>\n\n<b>JOIN 💎 : @OTSeries\n\nPOWERED BY ❤️  @M2LINKS</b>")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query:</b> {query}\n‌\n🏷 <b>Title :</b> <a href={url}>{title}</a>\n🎭 <b>Genres :</b> {genres}\n📆 <b>Year :</b> <ahref={url}/releaseinfo>{year}</a>\n🌟 <b>Rating :</b> <a href={url}/ratings>{rating}</a>\n📀 <b>RunTime :</b> {runtime} Minutes\n📆 <b>Release Info :</b> {release_date}\n\n<b>❤️‍🔥 Requested by :</b> {message.from_user.mention}\n\n<b>⚠️ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴᴜᴛᴇꜱ</b>")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b><a href='https://t.me/M2links' >{file_name}</a>\n\nJOIN : @OTSeries</b>")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b><a href='https://t.me/M2links' >{file_name}</a>\n\nJOIN : @OTSeries</b>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query:</b> {query}\n‌\n🏷 <b>Title :</b> <a href={url}>{title}</a>\n🎭 <b>Genres :</b> {genres}\n📆 <b>Year :</b> <ahref={url}/releaseinfo>{year}</a>\n🌟 <b>Rating :</b> <a href={url}/ratings>{rating}</a>\n📀 <b>RunTime :</b> {runtime} Minutes\n📆 <b>Release Info :</b> {release_date}\n\n<b>❤️‍🔥 Requested BY :</b> {message.from_user.mention}\n\n<b>⚠️ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴᴜᴛᴇꜱ</b>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
